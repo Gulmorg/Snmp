@@ -10,6 +10,12 @@ namespace Snmp.CommandLine
             #region Commands
             _walkCommand = new Command("walk", "Walk the specified snmp target");
             #endregion
+
+            #region Handlers
+            _walkCommand.SetHandler(() => {
+                HandlerActions.Walk();
+            });
+            #endregion
         }
 
         internal RootCommand Initialize()
