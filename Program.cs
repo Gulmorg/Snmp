@@ -1,10 +1,15 @@
-﻿namespace Snmp
+﻿using System.CommandLine;
+
+namespace Snmp
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static async Task<int> Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            var initializer = new CommandLine.Initializer();
+            var rootCommand = initializer.Initialize();
+
+            return await rootCommand.InvokeAsync(args);
         }
     }
 }
