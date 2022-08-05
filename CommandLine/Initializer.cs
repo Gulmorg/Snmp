@@ -5,6 +5,7 @@ namespace Snmp.CommandLine
     internal class Initializer
     {
         private readonly Command _walkCommand;
+
         public Initializer()
         {
             #region Commands
@@ -23,6 +24,7 @@ namespace Snmp.CommandLine
             var rootCommand = new RootCommand("A simple command-line snmp tool."){
                 _walkCommand,
             };
+
             return rootCommand;
         }
     }
